@@ -2,11 +2,16 @@
 var digitalClock = {
   time: Math.round(Date.now()/1000),
   startTicking: function(){
-    this.time = Math.round(Date.now()/1000);
+
     setInterval(() => {
-      // debugger;
-      this.time = Math.round(Date.now()/1000);
-      // console.log(this.time);
+
+      /// If you want to keep the time accurate:
+      // this.time = Math.round(Date.now()/1000);
+
+      /// Start timer; NB: if you wait between the initialization and starting to tick, your
+      /// clock will have fallen behind
+      this.time++;
+
     }, 1000);
   }
 }
